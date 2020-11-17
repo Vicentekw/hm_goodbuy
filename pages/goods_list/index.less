@@ -1,0 +1,33 @@
+.first_tabs{
+    navigator{
+        border-bottom: 1px solid #ccc;
+        .tabs_view{
+            display: flex;
+            .left_tabs{
+                display: flex;
+                flex: 2;
+                justify-content: center;
+                align-items: center;
+                image{
+                    width: 70%;
+                }
+            }
+            .right_cont{
+                flex: 3;
+                display: flex;
+                justify-content: space-around;
+                flex-direction: column;
+                .cont_title{
+                 display: -webkit-box;
+                 overflow: hidden;
+                 -webkit-box-orient: vertical;
+                 -webkit-line-clamp: 2;                    
+                }
+                .cont_price{
+                    font-size: 32rpx;
+                    color: var(--themeColor);
+                }
+            }
+        }
+    }
+}

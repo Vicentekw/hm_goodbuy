@@ -1,0 +1,31 @@
+.first_tabs navigator {
+  border-bottom: 1px solid #ccc;
+}
+.first_tabs navigator .tabs_view {
+  display: flex;
+}
+.first_tabs navigator .tabs_view .left_tabs {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+.first_tabs navigator .tabs_view .left_tabs image {
+  width: 70%;
+}
+.first_tabs navigator .tabs_view .right_cont {
+  flex: 3;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.first_tabs navigator .tabs_view .right_cont .cont_title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.first_tabs navigator .tabs_view .right_cont .cont_price {
+  font-size: 32rpx;
+  color: var(--themeColor);
+}
