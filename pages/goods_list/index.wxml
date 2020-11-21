@@ -5,6 +5,7 @@
             <navigator
             wx:for="{{goodsList}}"
             wx:key="goods_id"
+            url="/pages/goods_detail/index?goods_id={{item.goods_id}}"
             >
                 <view class="tabs_view">
                     <view class="left_tabs">

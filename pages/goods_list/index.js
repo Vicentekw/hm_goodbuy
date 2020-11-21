@@ -50,7 +50,7 @@ Page({
       const res = await request({url:'/goods/search',data:this.queryParma})
       console.log('商品数据',res);
        this.totalPage = Math.ceil( res.total / this.queryParma.pagesize )
-      console.log(this.totalPage);
+      // console.log(this.totalPage);
       this.setData({
         // 拼接了数组
         goodsList:[...this.data.goodsList,...res.goods]
