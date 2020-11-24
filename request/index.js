@@ -1,5 +1,9 @@
 let ajaxTimes = 0;   //同上发送异步代码的次数
 export const request = (parmas) => {
+    let header = {...parmas.header};
+    if(parmas.url.includes("/my/")){
+        header["Authorization"] = wx.getStorageSync("token");
+    }
     //显示加载动画
     ajaxTimes++;
     wx.showLoading({
@@ -11,6 +15,7 @@ export const request = (parmas) => {
     return new Promise((resolve, reject) => {
         wx.request({
             ...parmas,
+            header:header,
             url: baseurl + parmas.url,
             success: (result) => {
                 resolve(result.data.message);
