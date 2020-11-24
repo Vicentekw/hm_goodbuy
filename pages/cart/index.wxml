@@ -19,37 +19,48 @@
 <view class="cart_content">
     <view class="cart_title">购物车</view>
     <view class="cart_main">
-        <view class="cart_item" 
-        wx:for="{{cart}}"
-        wx:key="goods_id"
-        >
-            <!-- 复选框 -->
-            <view class="cart_chk_wrap">
-                <checkbox-group data-id="{{item.goods_id}}" bindchange="handleItemChange">
-                    <checkbox checked="{{item.checked}}"></checkbox>
-                </checkbox-group>
-            </view>
-            <!-- 商品图片 -->
-            <view class="cart_image_wrap">
-                <image mode="widthFix"
-                    src="{{item.goods_small_logo}}">
-                </image>
-            </view>
-            <!-- 商品信息 -->
-            <view class="cart_info_wrap">
-                <view class="goods_name">{{item.goods_name}}</view>
-                <view class="goods_price_wrap">
-                    <view class="goods_price">
-                        ￥ {{item.goods_price}}
-                    </view>
-                <view class="cart_num_tool">
-                    <view data-id="{{item.goods_id}}" data-operation="{{-1}}" bindtap="handleItemNumEdit" class="num_edit" >-</view>
-                    <view class="goods_num">{{item.num}}</view>
-                    <view data-id="{{item.goods_id}}" data-operation="{{1}}" bindtap="handleItemNumEdit" class="num_edit" >+</view>
+        <block wx:if="{{cart.length!==0}}">
+            <view class="cart_item" wx:for="{{cart}}" wx:key="goods_id">
+                <!-- 复选框 -->
+                <view class="cart_chk_wrap">
+                    <checkbox-group data-id="{{item.goods_id}}" bindchange="handleItemChange">
+                        <checkbox checked="{{item.checked}}"></checkbox>
+                    </checkbox-group>
                 </view>
-            </view> 
+                <!-- 商品图片 -->
+                <view class="cart_image_wrap">
+                    <image mode="widthFix" src="{{item.goods_small_logo}}">
+                    </image>
+                </view>
+                <!-- 商品信息 -->
+                <view class="cart_info_wrap">
+                    <view class="goods_name">{{item.goods_name}}</view>
+                    <view class="goods_price_wrap">
+                        <view class="goods_price">
+                            ￥ {{item.goods_price}}
+                        </view>
+                        <view class="cart_num_tool">
+                            <view data-id="{{item.goods_id}}" data-operation="{{-1}}" bindtap="handleItemNumEdit"
+                                class="num_edit">-</view>
+                            <view class="goods_num">{{item.num}}</view>
+                            <view data-id="{{item.goods_id}}" data-operation="{{1}}" bindtap="handleItemNumEdit"
+                                class="num_edit">+</view>
+                        </view>
+                    </view>
+                </view>
             </view>
-        </view>
+        </block>
+        <block wx:else>
+            <view class="null_shopping_wrap">
+                <image  src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606107952155&di=74b7149bb6602f0430403fae2fbc2c93&imgtype=0&src=http%3A%2F%2Fwww.kangjiayiyao.com%2Fimages%2Fempty.gif" mode="widthFix" />
+                <view class="tips_title">您的购物车还是空的赶紧行动吧！</view>
+                <navigator  url="/pages/category/index" open-type="switchTab">
+                    <view class="back_goshopping">马上去购物</view>
+                </navigator>
+            </view>
+        </block>
+
+
     </view>
 </view>
 
@@ -58,7 +69,7 @@
     <view class="chk_all">
         <checkbox-group bindchange="handleItemAllChange">
             <checkbox checked="{{allChecked}}">
-              全选
+                全选
             </checkbox>
         </checkbox-group>
     </view>
@@ -67,7 +78,7 @@
         <view class="total_title">合计: <text class="total_price">￥ {{totalPrice}}</text></view>
         <view class="total_yun">包含运费</view>
     </view>
-    <view class="buy_btn">
+    <view class="buy_btn" bindtap="handleSettlement">
         结算({{totalNum}})
     </view>
 </view>

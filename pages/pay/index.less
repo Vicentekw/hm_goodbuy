@@ -3,14 +3,6 @@ page {
 }
 
 .recice_address_row {
-    .address_btn {
-        padding: 20rpx;
-
-        button {
-            width: 60%;
-        }
-    }
-
     .address_info_row {
         display: flex;
         padding: 20rpx;
@@ -18,7 +10,6 @@ page {
         .address_info {
             flex: 5;
         }
-
         .address_phone {
             flex: 2;
         }
@@ -42,18 +33,6 @@ page {
             display: flex;
             padding: 10rpx;
             border-bottom: 1rpx solid #ccc;
-
-            .cart_chk_wrap {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                checkbox {
-                    checkbox {}
-                }
-            }
-
             .cart_image_wrap {
                 flex: 2;
                 display: flex;
@@ -91,16 +70,6 @@ page {
 
                     .cart_num_tool {
                         display: flex;
-
-                        .num_edit {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            width: 55rpx;
-                            height: 55rpx;
-                            border: 1rpx solid #ccc;
-                        }
-
                         .goods_num {
                             display: flex;
                             justify-content: center;
@@ -125,16 +94,6 @@ page {
     display: flex;
     border-top: 1rpx solid #ccc;
     background-color: #fff;
-
-    .chk_all {
-        flex: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        checkbox {}
-    }
-
     .total {
         flex: 5;
         text-align: right;
@@ -160,38 +119,5 @@ page {
         color: #fff;
         font-size: 32rpx;
         font-weight: 600;
-    }
-}
-
-.null_shopping_wrap {
-    width: 100%;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    image {
-        width: 40%;
-    }
-
-    .tips_title {
-        font-size: 28rpx;
-        color: #ccc;
-        margin-left: 5%;
-    }
-
-    navigator {
-        .back_goshopping {
-            margin-top: 20rpx;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            width: 300rpx;
-            height: 80rpx;
-            background-color: var(--themeColor);
-            border-radius: 40rpx;
-        }
     }
 }

@@ -1,1 +1,109 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #dedede;
+}
+.user_info_wrap {
+  height: 45vh;
+  background-color: var(--themeColor);
+}
+.user_info_wrap .user_img_wrap {
+  position: relative;
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 45vh;
+  filter: blur(5rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: #fff;
+  margin-top: 40rpx;
+}
+.user_info_wrap .user_btn {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.user_info_wrap .user_btn button {
+  width: 150rpx;
+}
+.user_content {
+  position: relative;
+}
+.user_content .user_main {
+  width: 90%;
+  position: absolute;
+  top: -40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #666;
+}
+.user_content .user_main .history_wrap {
+  background-color: #fff;
+  display: flex;
+}
+.user_content .user_main .history_wrap navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user_content .user_main .history_wrap navigator .his_num {
+  color: var(--themeColor);
+}
+.orders_wrap {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.orders_wrap .orders_title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.orders_wrap .orders_content {
+  display: flex;
+}
+.orders_wrap .orders_content navigator {
+  padding: 15rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.orders_wrap .orders_content navigator .iconfont {
+  font-size: 40rpx;
+  color: var(--themeColor);
+}
+.address_wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.app_info_wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.app_info_wrap .app_info_item {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #ccc;
+}
+.app_info_wrap .app_info_opinion {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.app_info_wrap .app_info_contect_us {
+  padding: 20rpx;
+}
+.app_info_share {
+  margin: 30rpx 0;
+  background-color: #fff;
+  padding: 20rpx;
+}

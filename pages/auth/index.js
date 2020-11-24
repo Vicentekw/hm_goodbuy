@@ -1,4 +1,12 @@
-// pages/auth/index.js
+import {
+  showModal,
+  showToast,
+  login
+} from "../../utils/asyncWx.js";
+import {
+  request
+} from "../../request/index.js"
+import regeneratorRuntime from "../../lib/runtime/runtime.js"
 Page({
 
   /**
@@ -7,60 +15,24 @@ Page({
   data: {
 
   },
+  // 获取用户授权信息
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  async bindGetUserInfo(e) {
+    try {
+      const { encryptedData,iv,rawData,signature} = e.detail;
+      // 通过内置wx登录API 获取code
+     const {code} =  await login();
+     console.log('code',code);
+     let Loginparmas = {encryptedData,iv,rawData,signature,code};
+     const token ="Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjIzLCJpYXQiOjE1NjQ3MzAwNzksImV4cCI6MTAwMTU2NDczMDA3OH0.YPt-XeLnjV-_1ITaXGY2FhxmCe4NvXuRnRB8OMCfnPo";
+      wx.setStorageSync('token',token)
+      wx.navigateBack({
+        delta: 1, // 回退前 delta(默认为1) 页面
+      })
+    //   const {token} = request({url:"/users/wxlogin",data:Loginparmas,method:"post"})
+    //  console.log(token);
+    } catch (error) {
+      console.log(error);
+    }
   }
 })
